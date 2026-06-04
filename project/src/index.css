@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0e1012;
+    color: #cdd5da;
+    font-family: 'Inter', system-ui, sans-serif;
+    overscroll-behavior: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #323840;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #424a52;
+  }
+
+  ::selection {
+    background: rgba(47, 114, 64, 0.35);
+    color: #d4eeda;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .glass {
+    background: rgba(24, 27, 30, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-light {
+    background: rgba(34, 38, 41, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(47, 114, 64, 0.25);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 20px rgba(201, 114, 0, 0.2);
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #52a868, #3d8f52);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-amber {
+    background: linear-gradient(135deg, #eda43a, #c97200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-glow-green {
+    border-color: rgba(47, 114, 64, 0.5);
+    box-shadow: 0 0 0 1px rgba(47, 114, 64, 0.15);
+  }
+
+  .rating-high  { color: #52a868; }
+  .rating-mid   { color: #eda43a; }
+  .rating-low   { color: #c44a3a; }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(50, 56, 64, 0.4) 25%,
+      rgba(66, 74, 82, 0.5) 50%,
+      rgba(50, 56, 64, 0.4) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* Syntax highlighting for Python code */
+.code-keyword   { color: #3d8f52; font-weight: 500; }
+.code-string    { color: #f5be68; }
+.code-comment   { color: #5c666f; font-style: italic; }
+.code-number    { color: #eda43a; }
+.code-builtin   { color: #74c285; }
+.code-decorator { color: #e08a1a; }
+
+/* Smooth transitions for interactive elements */
+.interactive {
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile safe area */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Nav pill indicator */
+.nav-indicator {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Heatmap cells */
+.heat-0  { background: #1d2124; }
+.heat-1  { background: #17381f; }
+.heat-2  { background: #1f4a2b; }
+.heat-3  { background: #275e35; }
+.heat-4  { background: #2f7240; }
+.heat-5  { background: #3d8f52; }
+.heat-n1 { background: #3d1616; }
+.heat-n2 { background: #5a1f1f; }
+.heat-n3 { background: #7a2828; }
